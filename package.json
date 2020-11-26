@@ -1,0 +1,52 @@
+{
+  "name": "tdd-exercises-js",
+  "version": "0.1.0",
+  "description": "TDD Workshop Exercises",
+  "scripts": {
+    "start": "react-scripts start",
+    "lint": "eslint src --ext .js",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jest-environment-jsdom-sixteen",
+    "eject": "react-scripts eject"
+  },
+  "author": "Damjan Vujnovic",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "classnames": "2.2.6",
+    "react": "17.0.1",
+    "react-dom": "17.0.1"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "5.11.6",
+    "@testing-library/react": "11.2.2",
+    "@testing-library/user-event": "12.2.2",
+    "eslint-config-prettier": "6.15.0",
+    "eslint-plugin-prettier": "3.1.4",
+    "http-proxy-middleware": "1.0.6",
+    "jest-environment-jsdom-sixteen": "1.0.3",
+    "jest-fetch-mock": "3.0.3",
+    "prettier": "2.2.0",
+    "react-scripts": "4.0.1"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "plugin:prettier/recommended"
+    ]
+  },
+  "babel": {
+    "presets": [
+      "babel-preset-react-app"
+    ]
+  },
+  "prettier": {
+    "singleQuote": true,
+    "printWidth": 85
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

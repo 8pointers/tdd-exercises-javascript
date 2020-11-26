@@ -1,0 +1,1 @@
+In order to get familiar with Jest, test-drive a simple JavaScript function that computes whether one single cell in current iteration (dead or alive) with given number of alive neighbours (0 - 8) would be dead or alive in next iteration.
