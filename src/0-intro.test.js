@@ -10,14 +10,14 @@ describe('Jest', function () {
 
     const result = underTest(123, 45);
 
-    expect(result).toBe(168)
+    expect(result).toBe(168);
   });
   it('should understand .not', function () {
     const underTest = (a, b) => a + b;
 
     const result = underTest(0.1, 0.2);
 
-    expect(result).not.toBe(0.3)
+    expect(result).not.toBe(0.3);
   });
   it('should understand the difference between identity and equality', function () {
     const underTest = (name) => ({ name: name });
@@ -25,14 +25,14 @@ describe('Jest', function () {
     const result = underTest('First');
 
     expect(result.name).toBe('First');
-    expect(result).not.toBe({name: 'First'});
-    expect(result).toEqual({name: 'First'});
+    expect(result).not.toBe({ name: 'First' });
+    expect(result).toEqual({ name: 'First' });
   });
 
   it('should understand stubs', function () {
     const underTest = function pickRandom(xs) {
       return xs[Math.floor(Math.random() * xs.length)];
-    }
+    };
     jest.spyOn(Math, 'random').mockImplementation(() => 0);
     expect(underTest(['First', 'Second', 'Third'])).toBe('First');
     jest.spyOn(Math, 'random').mockImplementation(() => 0.33);
@@ -59,20 +59,23 @@ describe('Jest', function () {
   //   }, 100);
   // });
   it('should understand async tests - promises', function () {
-    const underTest = (name) => new Promise(resolve => setTimeout(() => resolve(`Hello ${name}!`), 100));
+    const underTest = (name) =>
+      new Promise((resolve) => setTimeout(() => resolve(`Hello ${name}!`), 100));
 
-    return underTest('World').then(result => expect(result).toBe('Hello World!'));
+    return underTest('World').then((result) => expect(result).toBe('Hello World!'));
   });
   it('should understand async tests - promises', function () {
-    const underTest = (name) => new Promise(resolve => setTimeout(() => resolve(`Hello ${name}!`), 100));
+    const underTest = (name) =>
+      new Promise((resolve) => setTimeout(() => resolve(`Hello ${name}!`), 100));
 
-    return underTest('World').then(result => expect(result).toBe('Hello World!'));
+    return underTest('World').then((result) => expect(result).toBe('Hello World!'));
   });
 
   it('should understand mocking http', () => {
-    const fetchIp = () => fetch('/api/ipify?format=json')
-      .then((response) => response.json())
-      .then(({ ip }) => ip);
+    const fetchIp = () =>
+      fetch('/api/ipify?format=json')
+        .then((response) => response.json())
+        .then(({ ip }) => ip);
     fetch.mockResponseOnce(JSON.stringify({ ip: '1.2.3.4' }));
 
     return fetchIp().then((ip) => {
